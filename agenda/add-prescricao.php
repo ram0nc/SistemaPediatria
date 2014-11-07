@@ -7,9 +7,11 @@ include ("conecta.php");
 
 $medicamento = $_GET['medicamento'];
 $idMedicamento = buscarMedicamento($conexao,$medicamento);
-//nao sei pq ele tah dando esse warning, mas ele tah resolvendo
-$numero = mysqli_num_rows($idMedicamento);
-if( $numero < 1){ 
+//mudei pra testar o tamanho do array
+//o erro tava na função mysqli_numrows pq tu tava passando um array e não uma consu
+
+
+if(sizeof($idMedicamento)==0){ 
      insereMedicamento($conexao,$medicamento);
      $idMedicamento = buscarMedicamento($conexao,$medicamento);
  }

@@ -14,7 +14,7 @@ class BancoDeDados{
 		 $host = "localhost";
 	 	 $bd = "agenda_medica";
 		 $usuario = "root";
-	 	 $senha = "";
+	 	 $senha = "superadmin";
 
 	 	 try{
 	 	 	$this->conn = mysqli_connect($host, $usuario, $senha, $bd);

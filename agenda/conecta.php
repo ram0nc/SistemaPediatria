@@ -1,2 +1,2 @@
 <?php
-$conexao = mysqli_connect("localhost", "root", "", "agenda_medica");
+$conexao = mysqli_connect("localhost", "root", "superadmin", "agenda_medica");
