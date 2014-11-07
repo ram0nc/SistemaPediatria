@@ -1,12 +1,12 @@
 <?php include("cabecalho.php"); 		
 			
  include ("conecta.php");
- include ("DAO-medicamento.php");
+ include ("DAO-PlanoSaude.php");
 
 
-$nome = $_GET['medicamento'];
+$nome = $_GET['plano'];
 
-if( insereMedicamento($conexao, $nome)){ ?>
+if( inserePlano($conexao, $nome)){ ?>
 	<p class="text-success">O produto <?= $nome ?> foi adicionado.</p>
 <?php } else {
 	$msg = mysqli_error($conexao);

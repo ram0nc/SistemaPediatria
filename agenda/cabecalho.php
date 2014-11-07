@@ -10,6 +10,7 @@
 
     <title>Consultório Pediátrico</title>
 
+    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 

@@ -1,0 +1,10 @@
+.centralizado {
+    margin: 0 auto;
+    float: none;
+}
+
+
+.principal {
+	padding: 40px 15px;
+	text-align: center;
+}

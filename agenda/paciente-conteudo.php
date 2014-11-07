@@ -35,16 +35,16 @@
                             <form>
                                 <div class="form-group">
                                     <label for="pacient-name">Nome do Paciente</label>
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" name="paciente" type="text">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nome dos Pais</label>
-                                    <input type="text" class="form-control" placeholder="Nome da Mãe"><br>
-                                    <input type="text" class="form-control" placeholder="Nome do Pai">
+                                    <input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe"><br>
+                                    <input type="text" class="form-control" name="nomepai" placeholder="Nome do Pai">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Data de Nascimento</label>
-                                    <input type="date" class="form-control">
+                                    <input type="date" name="datanascimento" class="form-control">
                                 </div>
                                 
                               

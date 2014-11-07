@@ -1,9 +1,11 @@
-<?php include("cabecalho.php") ?>
+<?php include("cabecalho.php");
+  include ("conecta.php");
+        include ("DAO-exame.php");?>
 
   <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           Medicamentos
+                           Exames
                         </h1>
                       
                     </div>
@@ -18,25 +20,48 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novo-Exame">
                            <br>
-                            <form class = "col-lg-9">
+                            <form class = "col-lg-9" action="add-exame.php" method="get">
 
-                                <div class="form-group">
+                                <div class="form-group" >
                                     <label for="pacient-name">Nome do Exame</label>
-                                    <input class="form-control" type="text" id="nome-exame">
+                                    <input class="form-control" type="text" id="nome-exame" name="exame">
+                                    <br>
+                                  <button type="submit" class="btn btn-lg btn-primary">Salvar Paciente</button>
+                              
                                 </div>
                             </form>
 
-                            <div class="col-lg-3">
-                              <br>
-                                    <div class="form-group">
-                                
-                                   <button type="button" class="btn btn-lg btn-primary">Salvar Paciente</button>
-                                </div>
-                            </div>
                         </div>
                         <div class="tab-pane col-lg-6" id="lista-Exames">
-                            EM CONSTRUÇÃO
+                         
+                            <div class="tab-pane col-lg-12 principal">
+                                    <br>
+                                    <br>
+                           <table class="table table-striped table-bordered">
+                                <tr>
+                                      <th>Exames</th>
+                                      <th>Remover</th>
+                                 </tr>
+
+                                <?php
+                                    $exames = ListaExame($conexao);
+                                    foreach($exames as $exame) :
+                                ?>
+                                <tr>
+                                    <td><?= $exame['nome_exame'] ?></td>
+                                    <td >
+                                        <form action="remover-exame.php" method="post">
+                                            <input type="hidden" name="id" value="<?=$medicam['idExame']?>">
+                                            <button class="btn btn-danger">remover</button>
+                                        </form>
+                                      </td>
+                                </tr>
+                            <?php
+                              endforeach
+                            ?>
+                           </table>
                         </div>
+                    </div>
                     </div>
                     
                 </div>

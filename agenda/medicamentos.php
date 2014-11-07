@@ -1,7 +1,14 @@
-<?php include("cabecalho.php"); ?>
+<?php include("cabecalho.php"); 
+        include ("conecta.php");
+        include ("DAO-medicamento.php");
+?>
+
+
 
   <div class="row">
                     <div class="col-lg-12">
+
+
                         <h1 class="page-header">
                            Medicamentos
                         </h1>
@@ -18,24 +25,49 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novo-medicamento">
                             <br>
-                            <form class="col-lg-9"  action="add-medicamento.php" method="post">
-                                <div class="form-group">
+                            <form class="col-lg-9"  action="add-medicamento.php" method="get">
                                     <label for="pacient-name">Nome do Medicamento</label>
-                                    <input class="form-control" type="text" id="medicamento">
-                                </div>
-                                 <div class="form-group">
+                                    <br>
+                                    <input class="form-control" type="text" id="medicamento" name="medicamento">
+                                      <br>
+                                      <button type="submit" class="btn btn-lg btn-primary" >Salvar Medicamento</button>
                                 
-                                   <button type="submit" class="btn btn-lg btn-primary" >Salvar Medicamento</button>
-                                </div>
                                
+                                
 
 
                             </form>
 
                         </div>
                         <div class="tab-pane col-lg-6" id="lista-medicamento">
-                            EM CONSTRUÇÃO
+                            <div class="tab-pane col-lg-12 principal">
+                                    <br>
+                                    <br>
+                           <table class="table table-striped table-bordered">
+                                <tr>
+                                      <th>Medicamentos</th>
+                                      <th>Alterar</th>
+                                 </tr>
+
+                                <?php
+                                    $medicamentos = ListaMedicamentos($conexao);
+                                    foreach($medicamentos as $medicam) :
+                                ?>
+                                <tr>
+                                    <td><?= $medicam['nome_medicamento'] ?></td>
+                                    <td >
+                                        <form action="remover-medicamento.php" method="post">
+                                            <input type="hidden" name="id" value="<?=$medicam['idMedicamento']?>">
+                                            <button class="btn btn-danger">remover</button>
+                                        </form>
+                                      </td>
+                                </tr>
+                            <?php
+                              endforeach
+                            ?>
+                           </table>
                         </div>
+                    </div>
                     </div>
                     
                 </div>

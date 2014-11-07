@@ -1,4 +1,6 @@
-<?php include("cabecalho.php") ?>
+<?php include("cabecalho.php");
+  include ("conecta.php");
+        include ("DAO-PlanoSaude.php"); ?>
 
   <div class="row">
                     <div class="col-lg-12">
@@ -18,24 +20,47 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novoPlano">
                            <br>
-                            <form class = "col-lg-9">
+                            <form class = "col-lg-9" action="add-Plano.php">
 
                                 <div class="form-group">
                                     <label for="pacient-name">Nome do Plano de Saúde</label>
-                                    <input class="form-control" type="text" id="nome-plano">
+                                    <input class="form-control" type="text" id="plano" name="plano">
+                                    <button type="submit" class="btn btn-lg btn-primary">Salvar Plano</button>
                                 </div>
                             </form>
 
-                            <div class="col-lg-3">
-                              <br>
-                                    <div class="form-group">
-                                
-                                   <button type="button" class="btn btn-lg btn-primary">Salvar Plano</button>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="tab-pane col-lg-6" id="lista-Planos">
-                            EM CONSTRUÇÃO
+                            
+
+                            <div class="tab-pane col-lg-12 principal">
+                                    <br>
+                                    <br>
+                           <table class="table table-striped table-bordered">
+                                <tr>
+                                      <th>Planos</th>
+                                      <th>Remover</th>
+                                 </tr>
+
+                                <?php
+                                    $planos = ListaPlano($conexao);
+                                    foreach($planos as $plano) :
+                                ?>
+                                <tr>
+                                    <td><?= $plano['nome_plano'] ?></td>
+                                    <td >
+                                        <form action="remover-plano.php" method="post">
+                                            <input type="hidden" name="id" value="<?=$medicam['idPlanoSaude']?>">
+                                            <button class="btn btn-danger">remover</button>
+                                        </form>
+                                      </td>
+                                </tr>
+                                <?php
+                                endforeach
+                                ?>
+                           </table>
+                        </div>
                         </div>
                     </div>
                     

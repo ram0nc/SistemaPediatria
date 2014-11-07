@@ -1,4 +1,6 @@
-<?php include ("cabecalho.php"); ?>
+<?php include ("cabecalho.php"); 
+        include ("conecta.php");
+        include ("DAO-medicamento.php");?>
 
   <div class="row">
                     <div class="col-lg-12">
@@ -11,44 +13,50 @@
                 <!-- /.row -->
                 <div class="row col-lg-12">
                    
-                  
+                
                          <br>
-                            <form class = "col-lg-9">
+                            <form action="add-prescricao.php">
+                                <div class = "col-lg-9">
+                                    <div class="form-group">
+                                        <label for="nome-exame">Nome do Medicamento</label>
+                                            <input  class="form-control" type="text" name="medicamento" id="srch" list="datalist1" />
+                                            <datalist id="datalist1">
+                                            
+                                                <?php
+                                                $medicamentos = ListaMedicamentos($conexao);
+                                                foreach($medicamentos as $medicam) :
+                                                ?>
+                                            <option value="<?= $medicam['nome_medicamento'] ?>"> 
+                                              <?php    endforeach ?>
+                                            </datalist>
+                                     
+                                        </select>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="nome-exame">Nome do exame</label>
-                                    <select class="form-control" id = "lista-exame">
-                                    <option>doflex</option>
-                                    <option>neosaldina</option>
-                                    <option>bezetacil</option>
-                                 
-                                </select>
+                                    <div class="form-group">
+                                        <label for="dosagem">Dosagem</label>
+                                        <input class="form-control" type="text" name="dosagem" id="dosagem">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dias">Administração</label>
+                                        <input class="form-control" type="text" name="administracao" id="administraçao">
+                                    </div>
+                                	 <div class="form-group">
+                                        <label for="dias">Tempo de uso</label>
+                                        <input class="form-control" type="text" name="tempoUso" id="tempoUso">
+                                    </div>
+                                   
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="dosagem">Dosagem</label>
-                                    <input class="form-control" type="text" id="dosagem">
+                                <br>
+                                    <div class="form-group col-lg-3">
+                                
+                                   <button type="submit" class="btn btn-lg btn-primary">Salvar Prescrição</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="dias">Administração</label>
-                                    <input class="form-control" type="text" id="administraçao">
-                                </div>
-                            	 <div class="form-group">
-                                    <label for="dias">Tempo de uso</label>
-                                    <input class="form-control" type="text" id="tempoUso">
-                                </div>
-                               
-                            
-
 
                             </form>
 
                            
-                              <br>
-                                    <div class="form-group">
-                                
-                                   <button type="button" class="btn btn-lg btn-primary">Salvar Prescrição</button>
-                                </div>
+                              
                             
                        
                     
