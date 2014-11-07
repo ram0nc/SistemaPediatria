@@ -25,7 +25,7 @@ $idMedicamento = $idMedicamento['idMedicamento'];
 if( inserePrescricao($conexao, $dosagem,$administracao,$tempoUso,$idMedicamento)){ ?>
 	<p class="text-success">a prescricao  foi adicionado.</p>
 <?php } else {
-	//$msg = mysqli_error($conexao);
+	$msg = mysqli_error($conexao);
 ?>
 	<p class="text-danger centralizado">a prescricao não foi adicionado: <?= $msg?></p>
 <?php

@@ -15,7 +15,7 @@
                    
                 
                          <br>
-                            <form action="add-prescricao.php">
+                            <form action="add-prescricao.php" method="get">
                                 <div class = "col-lg-9">
                                     <div class="form-group">
                                         <label for="nome-exame">Nome do Medicamento</label>
@@ -30,7 +30,7 @@
                                               <?php    endforeach ?>
                                             </datalist>
                                      
-                                        </select>
+                                        
                                     </div>
 
                                     <div class="form-group">

@@ -2,7 +2,7 @@
 
  function inserePrescricao($conecta,$dosagem,$administracao,$tempoUso,$id)
 {
-	$sql = "insert into prescricao (dosagem,administracao,tempoUso,Medicamento_idMedicamento) values ('{$dosagem}','{$administracao}','{$tempoUso}','{$id}')";
+	$sql = "insert into prescricao (dosagem,administracao,tempoUso,Medicamento_idMedicamento) values ('{$dosagem}','{$administracao}','{$tempoUso}',{$id})";
 		return mysqli_query($conecta, $sql);
 
 }
@@ -26,7 +26,7 @@ function RemovePrescricao($conecta,$id)
 
 function buscarPrescricao($conecta,$id){
 	
-	$query = "select *from prescricao where idPrescricao = ('{$id}')";
+	$query = "select *from prescricao where idPrescricao = {$id}";
 	return mysqli_query($conecta,$query);
 }
 
