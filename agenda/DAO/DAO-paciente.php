@@ -2,7 +2,7 @@
 
  function inserePaciente($conecta,$nome_crianca,$nomeMae,$nomePai,$dataNascimento,$sexo,$endereco,$planosaude)
 {
-	$sql = "insert into paciente (nome_crianca,nomeMae,nomePai,dataNascimento,sexo,Endereco_idEndereco,PlanoSaude_idPlanoSaude) values ('{$nome_crianca}','{$nomeMae}','{$nomePai}','{$dataNascimento}','{$sexo}','{$endereco}','{$planosaude}')";
+	$sql = "insert into paciente (nome_crianca,nomeMae,nomePai,dataNascimento,sexo,Endececo_idEndececo,PlanoSaude_idPlanoSaude) values ('{$nome_crianca}','{$nomeMae}','{$nomePai}','{$dataNascimento}','{$sexo}','{$endereco}','{$planosaude}')";
 		return mysqli_query($conecta, $sql);
 
 }
@@ -10,7 +10,7 @@
 function ListaPacientes($conecta){
 
 	$pacientes = array();
-	$resultado = mysqli_query($conecta, "select *from endereco");
+	$resultado = mysqli_query($conecta, "select *from paciente");
 	while($paciente= mysqli_fetch_assoc($resultado)) {
 		array_push($pacientes, $paciente);
 	}
@@ -26,8 +26,9 @@ function RemovePaciente($conecta,$id)
 
 function buscarPaciente($conecta,$id){
 	
-	$query = "select *from paciente where idPaciente = {$id}";
-	return mysqli_query($conecta,$query);
+	$query = "select *from paciente where nome_crianca = ('{$id}')";
+	$result = mysqli_query($conecta,$query);
+	return mysqli_fetch_assoc($result);
 }
 
 

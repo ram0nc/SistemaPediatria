@@ -1,3 +1,5 @@
+<?php include 'cabecalho.php'; 
+ ?>         
 
                 <!-- Page Heading -->
                 <div class="row">
@@ -72,4 +74,4 @@
                 <!-- /.row -->
 
                
-             
+  <?php include 'rodape.php'; ?>           

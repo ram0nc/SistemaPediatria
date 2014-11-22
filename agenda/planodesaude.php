@@ -1,6 +1,6 @@
 <?php include("cabecalho.php");
   include ("conecta.php");
-        include ("DAO-PlanoSaude.php"); ?>
+        include ("DAO/DAO-PlanoSaude.php"); ?>
 
   <div class="row">
                     <div class="col-lg-12">
@@ -20,7 +20,7 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novoPlano">
                            <br>
-                            <form class = "col-lg-9" action="add-Plano.php">
+                            <form class = "col-lg-9" action="CRUD/add-Plano.php">
 
                                 <div class="form-group">
                                     <label for="pacient-name">Nome do Plano de Saúde</label>
@@ -50,7 +50,7 @@
                                 <tr>
                                     <td><?= $plano['nome_plano'] ?></td>
                                     <td >
-                                        <form action="remover-plano.php" method="post">
+                                        <form action="CRUD/remover-plano.php" method="post">
                                             <input type="hidden" name="id" value="<?=$medicam['idPlanoSaude']?>">
                                             <button class="btn btn-danger">remover</button>
                                         </form>

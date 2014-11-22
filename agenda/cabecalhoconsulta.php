@@ -6,14 +6,14 @@ include("mostra-alerta.php");
 include ("logica-usuario.php");
 
  verificaUsuario();
- 
+
  ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    
+	<meta charset="UTF-8">
+	
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -34,17 +34,13 @@ include ("logica-usuario.php");
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    
-    <link rel='stylesheet' type='text/css' href='assets/css/reset.css' />
-    <link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css' />
-    <link rel='stylesheet' type='text/css' href='assets/css/jquery.weekcalendar.css' />
-    <link rel='stylesheet' type='text/css' href='assets/css/eventcalendar.css' />
-    
-
-   <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-      <!-- Bootstrap Core JavaScript -->
+	
+	<link rel='stylesheet' type='text/css' href='assets/css/reset.css' />
+	<link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css' />
+	<link rel='stylesheet' type='text/css' href='assets/css/jquery.weekcalendar.css' />
+	<link rel='stylesheet' type='text/css' href='assets/css/eventcalendar.css' />
+	
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
@@ -52,10 +48,10 @@ include ("logica-usuario.php");
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
     
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
-    <script type='text/javascript' src='assets/js/jquery.weekcalendar.js'></script>
-    <script type='text/javascript' src='assets/js/settings.js'></script>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
+	<script type='text/javascript' src='assets/js/jquery.weekcalendar.js'></script>
+	<script type='text/javascript' src='assets/js/settings.js'></script>
     </head>
 
 <body>
@@ -75,7 +71,8 @@ include ("logica-usuario.php");
                 <a class="navbar-brand" href="principal.php">Consultório - <?= usuarioLogado() ?></a>
             </div>
 
-           <!-- Top Menu Items -->
+            <?php include("mensagens.php") ?>
+            <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Drº <?= usuarioLogado() ?><b class="caret"></b></a>
@@ -131,48 +128,13 @@ include ("logica-usuario.php");
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        
+		
 
-            <div id="page-wrapper">
+		    <div id="page-wrapper">
 
             <div class="container-fluid">
 
-
-                <!-- Page Heading -->
-                <div class="row">
-                 <h1 class="page-header"> Horario </h1>
-                
-                <div id='calendar'></div>
-                <div id="event_edit_container">
-                    <form>
-                        <input type="hidden" />
-                            <ul>
-                            <li><span>Date: </span><span class="date_holder"></span></li>
-                            <li><label for="start">inicio da consulta: </label><select name="start"><option value="">Select Start Time</option></select></li>
-                            <li><label for="end">fim da consulta: </label><select name="end"><option value="">Select End Time</option></select></li>
-                            <li><label for="title">Nome do Paciente: </label><input type="text" name="title" maxlength="20"/></li>
-                            
-                </ul>
-            </form>
-        </div>
-            </ul>
-        </form>
-    </div>
-
-           </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-
-</body>
-
-</html>
+                <?php 
+               mostraAlerta("success");
+               mostraAlerta("danger");
+            ?>

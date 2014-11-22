@@ -1,6 +1,6 @@
 <?php include("cabecalho.php"); 
         include("conecta.php");
-        include("DAO-PlanoSaude.php");?>
+        include("DAO\DAO-PlanoSaude.php");?>
 
 
                 <!-- Page Heading -->
@@ -30,7 +30,7 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-12 active" id="novo-paciente">
                             
-                             <form action="add-paciente.php" method="get">
+                             <form action="CRUD/add-paciente.php" method="get">
 
                                     <div class="col-lg-6">
                                     <div class="page-header">
@@ -94,7 +94,7 @@
                                           
                                         <div class="form-group controls">
                                             <label for="">Logradouro</label>
-                                            <input type="text" class="form-control" id ="logradoudo" name="logradoudo">
+                                            <input type="text" class="form-control" id ="logradouro" name="logradouro">
                                       </div>
                                       <div class="form-group">
                                             <label for="">Numero</label>
@@ -147,7 +147,7 @@
                                       </div>
                                         <br>
                                         <br>
-                                    <button type="button" class="btn btn-lg btn-primary">Salvar Paciente</button>
+                                    <button type="submit" class="btn btn-lg btn-primary">Salvar Paciente</button>
 
                                 </div>
                             </form>

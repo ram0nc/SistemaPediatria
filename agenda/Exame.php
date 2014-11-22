@@ -1,6 +1,6 @@
 <?php include("cabecalho.php");
   include ("conecta.php");
-        include ("DAO-exame.php");?>
+        include ("DAO/DAO-exame.php");?>
 
   <div class="row">
                     <div class="col-lg-12">
@@ -20,13 +20,13 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novo-Exame">
                            <br>
-                            <form class = "col-lg-9" action="add-exame.php" method="get">
+                            <form class = "col-lg-9" action="CRUD/add-exame.php" method="get">
 
                                 <div class="form-group" >
                                     <label for="pacient-name">Nome do Exame</label>
                                     <input class="form-control" type="text" id="nome-exame" name="exame">
                                     <br>
-                                  <button type="submit" class="btn btn-lg btn-primary">Salvar Paciente</button>
+                                  <button type="submit" class="btn btn-lg btn-primary">Salvar Exame</button>
                               
                                 </div>
                             </form>
@@ -50,7 +50,7 @@
                                 <tr>
                                     <td><?= $exame['nome_exame'] ?></td>
                                     <td >
-                                        <form action="remover-exame.php" method="post">
+                                        <form action="CRUD\remover-exame.php" method="post">
                                             <input type="hidden" name="id" value="<?=$medicam['idExame']?>">
                                             <button class="btn btn-danger">remover</button>
                                         </form>

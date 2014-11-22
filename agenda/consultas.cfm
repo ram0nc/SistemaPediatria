@@ -40,18 +40,6 @@ include ("logica-usuario.php");
     <link rel='stylesheet' type='text/css' href='assets/css/jquery.weekcalendar.css' />
     <link rel='stylesheet' type='text/css' href='assets/css/eventcalendar.css' />
     
-
-   <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-      <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
-    
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
     <script type='text/javascript' src='assets/js/jquery.weekcalendar.js'></script>
@@ -140,8 +128,7 @@ include ("logica-usuario.php");
 
                 <!-- Page Heading -->
                 <div class="row">
-                 <h1 class="page-header"> Horario </h1>
-                
+                <h1>Horario</h1>
                 <div id='calendar'></div>
                 <div id="event_edit_container">
                     <form>

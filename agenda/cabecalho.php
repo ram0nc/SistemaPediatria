@@ -1,3 +1,13 @@
+<?php 
+
+error_reporting(E_ALL ^ E_NOTICE);
+include("mostra-alerta.php");
+include ("logica-usuario.php");
+
+ verificaUsuario();
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,14 +49,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Consultório - Drº Monteiro</a>
+                <a class="navbar-brand" href="principal.php">Consultório - <?= usuarioLogado() ?></a>
             </div>
 
             <?php include("mensagens.php") ?>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Drº Monteiro<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Drº <?= usuarioLogado() ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
@@ -59,7 +69,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a>
+                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Sair</a>
                         </li>
                     </ul>
                 </li>
@@ -69,7 +79,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Principal</a>
+                        <a href="principal.php"><i class="fa fa-fw fa-dashboard"></i> Principal</a>
                     </li>
                     <li>
                         <a href="paciente-conteudo.php"><i class="fa fa-fw fa-group"></i> Pacientes</a>
@@ -105,3 +115,7 @@
 
             <div class="container-fluid">
 
+                <?php 
+               mostraAlerta("success");
+               mostraAlerta("danger");
+            ?>

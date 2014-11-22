@@ -1,5 +1,5 @@
-<?php include("cabecalho.php");
-	  include("principal.php"); ?>
+<?php include("cabecalho2.php");
+	  include("login.php"); ?>
 	
 	
 

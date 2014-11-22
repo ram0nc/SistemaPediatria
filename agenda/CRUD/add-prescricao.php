@@ -1,9 +1,8 @@
 <?php 
-include ("cabecalho.php");
-include ("DAO-medicamento.php");
-include ("DAO-prescricao.php");
+include ("../DAO/DAO-medicamento.php");
+include ("../DAO/DAO-prescricao.php");
 
-include ("conecta.php");
+include ("../conecta.php");
 
 $medicamento = $_GET['medicamento'];
 $idMedicamento = buscarMedicamento($conexao,$medicamento);
@@ -22,13 +21,12 @@ $tempoUso = $_GET['tempoUso'];
 $idMedicamento = $idMedicamento['idMedicamento'];
 
 
-if( inserePrescricao($conexao, $dosagem,$administracao,$tempoUso,$idMedicamento)){ ?>
-	<p class="text-success">a prescricao  foi adicionado.</p>
-<?php } else {
+if( inserePrescricao($conexao, $dosagem,$administracao,$tempoUso,$idMedicamento)){ 
+$_SESSION["success"] = "a prescricao  foi adicionado.";
+} else {
 	$msg = mysqli_error($conexao);
-?>
-	<p class="text-danger centralizado">a prescricao não foi adicionado: <?= $msg?></p>
-<?php
+
+	$_SESSION["danger"] = "a prescricao não foi adicionado: <?= $msg?></p>";
 }
- 
-include("rodape.php"); ?>			
+ header("Location: ../prescricao.php");
+  die(); ?>			

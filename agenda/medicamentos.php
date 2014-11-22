@@ -1,6 +1,6 @@
 <?php include("cabecalho.php"); 
         include ("conecta.php");
-        include ("DAO-medicamento.php");
+        include ("DAO/DAO-medicamento.php");
 ?>
 
 
@@ -25,7 +25,7 @@
                     <div class="tab-content">
                         <div class="tab-pane col-lg-6 active" id="novo-medicamento">
                             <br>
-                            <form class="col-lg-9"  action="add-medicamento.php" method="get">
+                            <form class="col-lg-9"  action="CRUD/add-medicamento.php" method="get">
                                     <label for="pacient-name">Nome do Medicamento</label>
                                     <br>
                                     <input class="form-control" type="text" id="medicamento" name="medicamento">
@@ -56,7 +56,7 @@
                                 <tr>
                                     <td><?= $medicam['nome_medicamento'] ?></td>
                                     <td >
-                                        <form action="remover-medicamento.php" method="post">
+                                        <form action="CRUD\remover-medicamento.php" method="post">
                                             <input type="hidden" name="id" value="<?=$medicam['idMedicamento']?>">
                                             <button class="btn btn-danger">remover</button>
                                         </form>
